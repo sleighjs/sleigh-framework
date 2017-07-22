@@ -16,7 +16,7 @@ class Elf extends BaseModel {
             if (typeof res !== "null") {
                 return res;
             } else {
-                setTimeout(queue, 10);
+                setTimeout(queue, 30);
             }
         }
 

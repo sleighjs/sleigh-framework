@@ -65,7 +65,7 @@ class Kernel {
         if (this.getRouter() == 'json') {
             this.setUpJsonRouter();
         } else {
-            var router = require('../router/routes.js');
+            var router = require('../../router/routes.js');
             router.routes();
         }
     }
@@ -75,7 +75,7 @@ class Kernel {
      * @return void
      */
     setUpStaticPath() {
-        app.use(express.static(path.join(__dirname, '../public')));
+        app.use(express.static(path.join(__dirname, '../../public')));
     }
 
     /**
@@ -84,7 +84,7 @@ class Kernel {
      */
     setUpTemplateEngine() {
         app.set('view engine', 'hbs');
-        app.set('views', path.join(__dirname, '../views'));
+        app.set('views', path.join(__dirname, '../../views'));
     }
 
     /**
@@ -93,10 +93,10 @@ class Kernel {
      */
     setUpJsonRouter() {
         var fs = require('fs');
-        var obj = JSON.parse(fs.readFileSync('router/routes.json', 'utf8'));
+        var obj = JSON.parse(fs.readFileSync('../../router/routes.json', 'utf8'));
         obj.routes.forEach(function(el) {
             if (el.method == 'GET') {
-                var controller = require('../controllers/' + el.controller.filename);
+                var controller = require('../../controllers/' + el.controller.filename);
                 app.get(el.path, controller[el.controller.function]);
             }
         });

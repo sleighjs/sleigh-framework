@@ -10,7 +10,7 @@ class BaseModel {
      */
     static fetchAll(tableName, callback) {
         db.query(queryBuilder.all(tableName), function(error, result, fields) {
-            if (error) reject(error);
+            if (error) throw (error);
             callback(result);
         });
     }
