@@ -1,0 +1,47 @@
+{
+  "name": "sleigh",
+  "version": "0.0.1",
+  "description": "A clean node js MVC Framework to scaffold your next app",
+  "main": "kernel.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siokas/sleigh-framework.git"
+  },
+  "keywords": [
+    "framework",
+    "mvc",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "Apostolos Siokas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/siokas/sleigh-framework/issues"
+  },
+  "homepage": "https://github.com/siokas/sleigh-framework#readme",
+  "dependencies": {
+    "async": "^2.5.0",
+    "body-parser": "^1.17.2",
+    "chalk": "^2.0.1",
+    "commander": "^2.11.0",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "express-validator": "^3.2.1",
+    "handlebars": "^4.0.10",
+    "hbs": "^4.0.1",
+    "inflect": "^0.4.0",
+    "mongoose": "^4.11.1",
+    "mysql": "^2.13.0",
+    "nodemon": "^1.11.0",
+    "progress": "^2.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.4.2"
+  }
+}
