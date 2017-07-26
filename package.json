@@ -1,13 +1,10 @@
 {
   "name": "sleigh",
-  "version": "0.0.32",
+  "version": "0.0.34",
   "description": "A clean node js MVC Framework to scaffold your next app",
   "main": "kernel.js",
   "directories": {
     "lib": "lib"
-  },
-  "scripts": {
-    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -40,8 +37,5 @@
     "mysql": "^2.13.0",
     "nodemon": "^1.11.0",
     "progress": "^2.0.0"
-  },
-  "devDependencies": {
-    "mocha": "^3.4.2"
   }
 }
