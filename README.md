@@ -10,6 +10,12 @@ To install sleigh framework, you should run the following command
 npm install sleigh
 ```
 
+To scaffold a new sleigh app, use the [sleigh command line tool](https://www.npmjs.com/package/sleigh-cli). 
+
+```
+npm install -g sleigh-cli
+```
+
 ## Built With
 
 * [Express](https://github.com/expressjs/express) - Server
@@ -17,7 +23,7 @@ npm install sleigh
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/sleigh/sleigh-cli/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+All pull requests are welcome. Please do not hesitate to ask anything and create a pull request for anything. Please also [check](https://github.com/sleighjs/sleigh-framework/blob/master/UPDATES.md) the future updates that I want to include in the project.
 
 ## Authors
 
