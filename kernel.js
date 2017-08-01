@@ -1,11 +1,13 @@
 var express = require('express');
+global.app = express();
+global.appRoot = require('app-root-path');
+global.util = require('./lib/util');
+global.ROUTER = express.Router();
 var bodyParser = require('body-parser');
 var path = require('path');
-global.app = express();
 var validator = require('express-validator');
 var mysql = require('mysql');
 require('dotenv').config();
-global.util = require('./lib/util');
 
 /**
  * The kernel of the app
@@ -25,6 +27,7 @@ class Kernel {
      * @return void
      */
     setUpServer() {
+        this.setUpBodyParser(); // Body Parser
         this.setUpRouter(); // Router
         this.setUpStaticPath(); // Static Path (Public)
         this.setUpTemplateEngine(); // Template Engine (Handlebars)
@@ -40,7 +43,6 @@ class Kernel {
         app.listen(port, function() {
             console.log(`Server started on http://localhost:${port}`);
         });
-        this.bodyParse();
     }
 
     /**
@@ -65,8 +67,7 @@ class Kernel {
         if (this.getRouter() == 'json') {
             this.setUpJsonRouter();
         } else {
-            var router = require('../../router/routes.js');
-            router.routes();
+            require(appRoot + '/router/routes.js');
         }
     }
 
@@ -75,7 +76,7 @@ class Kernel {
      * @return void
      */
     setUpStaticPath() {
-        app.use(express.static(path.join(__dirname, '../../public')));
+        app.use(express.static(appRoot + '/public'));
     }
 
     /**
@@ -84,7 +85,7 @@ class Kernel {
      */
     setUpTemplateEngine() {
         app.set('view engine', 'hbs');
-        app.set('views', path.join(__dirname, '../../views'));
+        app.set('views', (appRoot + '/views'));
     }
 
     /**
@@ -93,10 +94,10 @@ class Kernel {
      */
     setUpJsonRouter() {
         var fs = require('fs');
-        var obj = JSON.parse(fs.readFileSync('../../router/routes.json', 'utf8'));
+        var obj = JSON.parse(fs.readFileSync(appRoot + '/router/routes.json', 'utf8'));
         obj.routes.forEach(function(el) {
             if (el.method == 'GET') {
-                var controller = require('../../controllers/' + el.controller.filename);
+                var controller = require(appRoot + '/controllers/' + el.controller.filename);
                 app.get(el.path, controller[el.controller.function]);
             }
         });
@@ -106,7 +107,7 @@ class Kernel {
      * Body Parser
      * @return void
      */
-    bodyParse() {
+    setUpBodyParser() {
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({
             extended: false
