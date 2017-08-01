@@ -1,6 +1,6 @@
 {
   "name": "sleigh",
-  "version": "0.0.4",
+  "version": "0.0.41",
   "description": "A clean node js MVC Framework to scaffold your next app",
   "main": "kernel.js",
   "directories": {
