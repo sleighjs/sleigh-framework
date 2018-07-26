@@ -4,6 +4,7 @@ var builder = {
 
     /**
      * Query to fetch everything from the table
+     * 
      * @param  {String} table Name of the table
      * @return {String}       Query ready to use
      */

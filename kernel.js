@@ -16,6 +16,7 @@ class Kernel {
 
     /**
      * Constructor
+     * 
      * @return void
      */
     constructor() {
@@ -24,6 +25,7 @@ class Kernel {
 
     /**
      * Initial Setup of the server
+     * 
      * @return void
      */
     setUpServer() {
@@ -36,6 +38,7 @@ class Kernel {
 
     /**
      * Call this function to serve the app
+     * 
      * @return void
      */
     serve() {
@@ -47,6 +50,7 @@ class Kernel {
 
     /**
      * Set up Mysql and make a global variable the instance of connection
+     * 
      * @return void
      */
     setUpMysql() {
@@ -61,6 +65,7 @@ class Kernel {
 
     /**
      * Set up two different kind of routers
+     * 
      * @return void
      */
     setUpRouter() {
@@ -73,6 +78,7 @@ class Kernel {
 
     /**
      * Set Static Path
+     * 
      * @return void
      */
     setUpStaticPath() {
@@ -81,6 +87,7 @@ class Kernel {
 
     /**
      * Set Template Engine (handlebars)
+     * 
      * @return void
      */
     setUpTemplateEngine() {
@@ -90,6 +97,7 @@ class Kernel {
 
     /**
      * In case of json Router (Setup)
+     * 
      * @return void
      */
     setUpJsonRouter() {
@@ -105,6 +113,7 @@ class Kernel {
 
     /**
      * Body Parser
+     * 
      * @return void
      */
     setUpBodyParser() {
@@ -116,6 +125,7 @@ class Kernel {
 
     /**
      * Establish the connection with mysql
+     * 
      * @return void
      */
     mysqlConnect() {
@@ -126,6 +136,7 @@ class Kernel {
 
     /**
      * Setup Validator
+     * 
      * @return void
      */
     validator() {
@@ -149,6 +160,7 @@ class Kernel {
 
     /**
      * GETTER: Mysql connection instance
+     * 
      * @return {connection}
      */
     getMysqlConnection() {
@@ -157,6 +169,7 @@ class Kernel {
 
     /**
      * GETTER: The expressJs instance (server)
+     * 
      * @return {express}
      */
     getServer() {
@@ -165,6 +178,7 @@ class Kernel {
 
     /**
      * GETTER: Router preference of the user
+     * 
      * @return {string}
      */
     getRouter() {
@@ -173,6 +187,7 @@ class Kernel {
 
     /**
      * GETTER: Port specified by user
+     * 
      * @return {string}
      */
     getServerPort() {
